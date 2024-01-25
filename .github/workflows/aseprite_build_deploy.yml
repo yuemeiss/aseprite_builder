@@ -20,7 +20,7 @@ jobs:
         LATEST_TAG=$(echo "${data}" | jq -r '.tag_name')
         DOWNLOAD_URL=$(echo "${data}" | jq -r '.assets[].browser_download_url')
         VERSION_INFO=$(echo "${data}" | jq -r '.body')
-        
+
         echo "${LATEST_TAG}" > ${LATEST_TAG}.txt
         echo "::set-output name=latest_tag::${LATEST_TAG}"
         echo "::set-output name=download_url::${DOWNLOAD_URL}"
