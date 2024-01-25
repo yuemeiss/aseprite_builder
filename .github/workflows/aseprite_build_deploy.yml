@@ -1,13 +1,7 @@
 name: ninja aseprite
-on:
-  repository_dispatch:
-    types: [build]
-  workflow_dispatch:
-      inputs:
-        name:
-          description: 'Run?'
-          required: true
-          default: 'YES!'
+on: [push]
+env:
+  BUILD_TYPE: Release
 jobs:
   build-macos:
     runs-on: macos-latest
